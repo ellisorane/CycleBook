@@ -6,7 +6,7 @@ import busa from './imgs/2020-suzuki-hyabusa.jpg'
 import honda from './imgs/2019-honda-cb300r.jpg'
 import defaultUser from './imgs/user_default.png'
 
-const data = [
+const postData = [
     {
       id: nanoid(),
       username: 'JakeYchan',
@@ -27,7 +27,7 @@ const data = [
       img: busa,
       userImg: defaultUser,
       title: 'Took it to the track today',
-      content: 'Took my Hyabusa to the track today....almost died lol💀',
+      content: 'Took my Hyabusa to the track today....almost died lol💀. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       date: sub(new Date(), { minutes: 10 }).toISOString(),
       reactions: {
         thumbsUp: 0,
@@ -51,5 +51,5 @@ const data = [
     },
 ]
   
-export default data
+export default postData
   
