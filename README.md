@@ -2,8 +2,6 @@
 
 CycleBook is a social media page for motorcyclists built with React Js. Currently the page only has a feed section that shows current post, but I will update this README file as I add more features. Feel free to add your own code and share it with me
 
-### `cd the-app` before using any of the commands below
-
 ### `npm start`
 
 Runs the app in the development mode.\
