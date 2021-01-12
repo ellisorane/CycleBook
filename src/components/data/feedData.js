@@ -9,7 +9,7 @@ import defaultUser from './imgs/user_default.png'
 const postData = [
     {
       id: nanoid(),
-      username: 'JakeYchan',
+      username: 'JakeYchans',
       userImg: defaultUser,
       img: r6,
       title: 'New R6',
