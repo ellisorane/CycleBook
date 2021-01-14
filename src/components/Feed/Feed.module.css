@@ -24,11 +24,6 @@
     background-color: transparent;
 }
 
-.postedImage {
-    max-width: 700px;
-    border-radius: 2px;
-}
-
 .moreOrLess {
     color: rgb(0, 68, 255);
     cursor: pointer;

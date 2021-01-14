@@ -1,0 +1,34 @@
+.imgContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.postedImage {
+    max-width: 700px;
+    max-height: 500px;
+    border-radius: 2px;
+}
+
+.btnContainer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 26px;
+}
+
+.btn:hover {
+    transition: all 0.3s;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.btn:active {
+    opacity: 1;
+}

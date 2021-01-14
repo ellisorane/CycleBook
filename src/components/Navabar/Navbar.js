@@ -3,7 +3,7 @@ import React from 'react'
 
 import styles from './Navbar.module.css'
 
-export const Navbar = () => {
+const Navbar = () => {
   return (
     <nav>
       <div className={styles.navWrapper}>
@@ -21,3 +21,5 @@ export const Navbar = () => {
     </nav>
   )
 }
+
+export default Navbar
