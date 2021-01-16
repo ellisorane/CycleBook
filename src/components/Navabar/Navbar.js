@@ -3,7 +3,7 @@ import React from 'react'
 
 import styles from './Navbar.module.css'
 
-const Navbar = () => {
+const Navbar = ({showAcNav, setShowAcNav}) => {
   return (
     <nav>
       <div className={styles.navWrapper}>
@@ -14,8 +14,20 @@ const Navbar = () => {
           <li>Messages</li>
         </ul>
         <ul>
-          <li className={styles.navLink}>Account</li>
-          <li>Settings</li>
+          <div className={styles.acDiv}>
+            <li className={styles.navLink} onClick={() => setShowAcNav(!showAcNav)}>Account</li>
+            {/* SHOW THE BELOW INFO ONLY IF THE showAcNav STATE IS TRUE */}
+            {
+              showAcNav ? 
+              <ul className={styles.acDropdown}>
+                <li>Profile</li>
+                <li>Posts</li>
+                <li>Settings</li>
+                <li>Help</li>
+              </ul> : null
+            }
+          </div>
+          <li>Logout</li>
         </ul>
       </div>
     </nav>

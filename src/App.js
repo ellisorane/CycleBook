@@ -6,6 +6,8 @@ import Navbar  from './components/Navabar/Navbar'
 import Feed from './components/Feed/Feed'
 
 function App() {
+  //ACCOUNT DROPDOWN LIST USED IN NAV.JS
+  const [showAcNav, setShowAcNav] = useState(false)
   //POSTS STATE
   const [posts, setPosts] = useState(postData)
   //TO BE USED IN FEED.JS FOR CONTROLLING HOW MUCH OF A POST'S TEXT IS SHOWN
@@ -31,7 +33,6 @@ function App() {
     }
   }
 
-
   //HIDE INDIVIDUAL USER POSTS
   const hidePost = (id) => {
     const unhiddenPosts = posts.filter(post => post.id !== id)
@@ -53,7 +54,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
+      <Navbar showAcNav={showAcNav} setShowAcNav={setShowAcNav} />
       {feed}
     </div>
   );

@@ -35,3 +35,12 @@ nav li:hover {
     display: flex;
     justify-content: space-around;
 }
+
+.acDropdown {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(177, 177, 177);
+    border-top: none;
+    border-radius: 3px;
+    padding: 0;
+}
