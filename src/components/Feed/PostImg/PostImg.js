@@ -21,4 +21,5 @@ const PostImage = ({ img, changeImg, postImgIndex }) => {
     )
 }
 
+
 export default PostImage

@@ -1,5 +1,5 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
+import { NavLink } from "react-router-dom";
 
 import styles from './Navbar.module.css'
 
@@ -7,11 +7,11 @@ const Navbar = ({showAcNav, setShowAcNav}) => {
   return (
     <nav>
       <div className={styles.navWrapper}>
-        <h1 className={styles.navBrand}>CycleBooK</h1>
+        <h1><NavLink className={styles.navBrand} exact to="/">CycleBooK</NavLink></h1>
         <ul>
-          <li className={styles.active}>Feed</li>
-          <li>Liked</li>
-          <li>Messages</li>
+          <li><NavLink className={styles.navLink} activeClassName={styles.active} exact to="/">Feed</NavLink></li>
+          <li><NavLink className={styles.navLink} activeClassName={styles.active} exact to="/messages">Messages</NavLink></li>
+          <li><NavLink className={styles.navLink} activeClassName={styles.active} exact to="/marketplace">Marketplace</NavLink></li>
         </ul>
         <ul>
           <div className={styles.acDiv}>
@@ -20,14 +20,14 @@ const Navbar = ({showAcNav, setShowAcNav}) => {
             {
               showAcNav ? 
               <ul className={styles.acDropdown}>
-                <li>Profile</li>
-                <li>Posts</li>
-                <li>Settings</li>
-                <li>Help</li>
+                <li><NavLink className={styles.navLink} activeClassName={styles.active} exact to="/profile">Profile</NavLink></li>
+                <li><NavLink className={styles.navLink} activeClassName={styles.active} exact to="/posts">Posts</NavLink></li>
+                <li><NavLink className={styles.navLink} activeClassName={styles.active} exact to="/settings">Settings</NavLink></li>
+                <li><NavLink className={styles.navLink} activeClassName={styles.active} exact to="/help">Help</NavLink></li>
               </ul> : null
             }
           </div>
-          <li>Logout</li>
+          <li><NavLink className={styles.navLink} exact to="/logout">Logout</NavLink></li>
         </ul>
       </div>
     </nav>

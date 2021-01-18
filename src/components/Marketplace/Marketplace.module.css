@@ -1,0 +1,63 @@
+.marketplace {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h2 {
+    margin: auto;
+}
+
+.itemForSale {
+    background-color: aliceblue;
+    box-shadow: 0 5px 11px 2px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 15px;
+    
+}
+
+.price {
+    float: right;
+}
+
+.userInfo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.userImg {
+    margin: 0 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.btnContainer {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.mkBtn {
+    margin: 10px;
+    font-size: 20px;
+    padding: 15px;
+    background-color: tomato;
+    border: none;
+    border-radius: 15px;
+    transition: all 0.3s;
+    outline:none
+}
+
+.mkBtn:hover {
+    background-color: rgb(187, 71, 51);
+}
+
+@media screen and (min-width: 800px) {
+    .itemForSale {
+        width: 35%;
+    }
+}

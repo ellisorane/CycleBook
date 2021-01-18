@@ -1,6 +1,6 @@
 import React from 'react'
 
-import PostImg from '../PostImg/PostImg'
+import PostImg from './PostImg/PostImg'
 import styles from './Feed.module.css'
 
 
@@ -9,7 +9,7 @@ const Feed = ({ posts, hidePost, readMore, setReadMore, changeImg, postImgIndex 
   return (
     <div>
       {posts.map((post) => {
-        const { id, username, userImg, img, title, content } = post;
+        const { id, username, userImg, img, imgIndex, title, content } = post;
 
         return (
           <div key={id} className={styles.userPost}>
@@ -18,7 +18,7 @@ const Feed = ({ posts, hidePost, readMore, setReadMore, changeImg, postImgIndex 
             <button onClick={() => hidePost(id)} className={styles.hidePost}>🚫</button>
             </div>
 
-            <PostImg img={img} changeImg={changeImg} postImgIndex={postImgIndex} />
+            <PostImg img={img} changeImg={changeImg} postImgIndex={postImgIndex} imgIndex={imgIndex} />
 
             <h2>{title}</h2>
             <p>

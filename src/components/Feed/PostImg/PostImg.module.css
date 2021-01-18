@@ -6,8 +6,8 @@
 }
 
 .postedImage {
-    max-width: 700px;
-    max-height: 500px;
+    width: 80%;
+    /* max-height: 600px; */
     border-radius: 2px;
 }
 
@@ -32,3 +32,4 @@
 .btn:active {
     opacity: 1;
 }
+
