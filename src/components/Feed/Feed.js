@@ -34,9 +34,9 @@ const Feed = ({ posts, hidePost, readMore, setReadMore, changeImg, handleLikes }
               <p>Comments</p>
               <textarea className={styles.commentInput} placeholder="Comment here" /><br/>
               <button>Submit</button>
-              {comments.map(comm => {
+              {comments.map((comm, index) => {
                 console.log(comm)
-                return <p className={styles.comments}><strong>{comm.user} :</strong> {comm.comment}</p>
+                return <p key={index} className={styles.comments}><strong>{comm.user} :</strong> {comm.comment}</p>
               })}
             </div>
             <div className={styles.userInfo}>
