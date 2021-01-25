@@ -2,9 +2,9 @@ import React from 'react'
 
 import styles from './Marketplace.module.css'
 
-import PostImg from '../Feed/PostImg/PostImg'
+import PostImg from '../PostImg/PostImg'
 
-function Marketplace({marketplacePosts, changeImg, postImgIndex, mkFilter, mkCategories}) {
+function Marketplace({marketplacePosts, changeImg, mkFilter, mkCategories, id}) {
     return (
         <div className={styles.marketplace}>
             <h2>Marketplace</h2>
@@ -19,13 +19,14 @@ function Marketplace({marketplacePosts, changeImg, postImgIndex, mkFilter, mkCat
                 }
             </div>
 
+            <div className={styles.innerMk}>
             {
                 marketplacePosts.map(post => {
-                    const { id, seller, year, brand, model, engine, miles, price, desc, img, userImg } = post
+                    const { id, seller, year, brand, model, engine, miles, price, desc, img, userImg, imgIndex } = post
 
                     return (
                         <div className={styles.itemForSale} key={id}>
-                            <PostImg img={img} changeImg={changeImg} postImgIndex={postImgIndex} />
+                            <PostImg id={id} img={img} changeImg={changeImg} imgIndex={imgIndex} postData={marketplacePosts} />
                             <h4>{year} {brand} {model} <span className={styles.price}>${price}</span></h4>
                             <h5>Mileage: {miles}</h5>
                             <h5>Engine displacement: {engine}</h5>
@@ -34,11 +35,14 @@ function Marketplace({marketplacePosts, changeImg, postImgIndex, mkFilter, mkCat
                                 <p>{seller}</p>
                                 <img src={userImg} alt={seller} className={styles.userImg} />
                             </div>
+                            <button className={styles.mkBtn}>Contact Seller</button>
                         </div>
                     )
                 })
             }
+            </div>
         </div>
+
     )
 }
 

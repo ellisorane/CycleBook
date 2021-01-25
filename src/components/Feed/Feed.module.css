@@ -43,6 +43,10 @@
     border-radius: 5px;
 }
 
+.commentInput {
+    width: 90%;
+}
+
 @media screen and (min-width: 800px) {
     .userPost {
         width: 40%;
