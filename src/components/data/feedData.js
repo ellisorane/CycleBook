@@ -19,11 +19,17 @@ const postData = [
       title: 'New R6',
       content: 'Just bought my new 2020 Yamaha R6 so excited to share!😜😜',
       // date: sub(new Date(), { minutes: 5 }).toISOString(),
-      // reactions: {
-        //   thumbsUp: 0,
-        //   thumbsDown: 0,
-        //   favorite: 0,
-        // },
+      reactions: {
+          clicked: false,
+          likes: 153,
+          dislikes: 12
+      },
+      comments: [
+        {
+          user: 'WipItPhill',
+          comment: 'Nice'
+        }
+      ],
         imgIndex: 0,
     },
     {
@@ -34,11 +40,17 @@ const postData = [
       title: 'Motorcycle photographer',
       content: 'Hi guys🙋‍♂️, I\'m a professional motorcycle photographer. Let me know if you want some photos taken.',
       // date: sub(new Date(), { minutes: 12 }).toISOString(),
-      // reactions: {
-        //   thumbsUp: 0,
-        //   thumbsDown: 0,
-        //   favorite: 0,
-        // },
+      reactions: {
+          clicked: false,
+          likes: 5648,
+          dislikes: 150
+      },
+      comments: [
+        {
+          user: 'arema Allsers',
+          comment: 'Nice shots! I\'m interested in your services.'
+        }
+      ],
         imgIndex: 0,
     },
     {
@@ -49,11 +61,17 @@ const postData = [
       title: 'Took it to the track today',
       content: 'Took my Hyabusa to the track today....almost died lol💀. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       // date: sub(new Date(), { minutes: 10 }).toISOString(),
-      // reactions: {
-        //   thumbsUp: 0,
-        //   thumbsDown: 0,
-        //   favorite: 0,
-        // },
+      reactions: {
+          clicked: false,
+          likes: 4654,
+          dislikes: 500
+      },
+      comments: [
+        {
+          user: 'Busabrothe3rd',
+          comment: 'Nice busa bro! We gotta race one of these days.'
+        }
+      ],
         imgIndex: 0,
     },
     {
@@ -64,11 +82,17 @@ const postData = [
       title: 'Beginner here',
       content: 'Beginner rider here. Hi guys🙋‍♂️',
       // date: sub(new Date(), { minutes: 15 }).toISOString(),
-      // reactions: {
-        //   thumbsUp: 0,
-        //   thumbsDown: 0,
-        //   favorite: 0,
-        // },
+      reactions: {
+          clicked: false,
+          likes: 110,
+          dislikes: 3
+      },
+      comments: [
+        {
+          user: 'therider065',
+          comment: 'Hi welcome to the community.'
+        }
+      ],
         imgIndex: 0,
     },
     
