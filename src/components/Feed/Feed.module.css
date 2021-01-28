@@ -26,18 +26,15 @@
     background-color: transparent;
     outline: none;
     border-radius: 10px;
+    transition: all 0.3s;
 }
 
 .like:active {
     background-color: rgb(183, 226, 117);
 }
 
-.dislike:active {
-    background-color: rgb(228, 101, 101);
-}
-
-.hideAndLike button:disabled {
-    color: gray;
+.like:disabled {
+    color:  rgb(130, 184, 49);
     background-color: transparent;
 }
 
@@ -59,11 +56,25 @@
     border-radius: 5px;
 }
 
-.commentInput {
-    width: 90%;
+.commentDiv button {
+    font-size: 17px;
+    padding: 10px;
 }
 
+.commentInput {
+    width: 90%;
+    border-radius: 15px;
+    padding: 10px;
+    outline: none;
+    /* resize: none; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+}
+
+
+
 .comments {
+    margin: 10px 5px;
     border: 1px solid gray;
     padding: 5px;
     border-radius: 6px;

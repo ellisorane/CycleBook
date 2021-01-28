@@ -22,12 +22,15 @@ const postData = [
       reactions: {
           clicked: false,
           likes: 153,
-          dislikes: 12
       },
       comments: [
         {
           user: 'WipItPhill',
           comment: 'Nice'
+        },
+        {
+          user: 'Odaley65',
+          comment: 'Where you buy that at? Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
         }
       ],
         imgIndex: 0,
@@ -38,12 +41,11 @@ const postData = [
       img: [mach20_1, mach20_2, mach20_3, mach20_4],
       userImg: defaultUser,
       title: 'Motorcycle photographer',
-      content: 'Hi guys🙋‍♂️, I\'m a professional motorcycle photographer. Let me know if you want some photos taken.',
+      content: 'Hi guys🙋‍♂️, I\'m a professional motorcycle photographer. Let me know if you want some photos taken. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
       // date: sub(new Date(), { minutes: 12 }).toISOString(),
       reactions: {
           clicked: false,
           likes: 5648,
-          dislikes: 150
       },
       comments: [
         {
@@ -64,7 +66,6 @@ const postData = [
       reactions: {
           clicked: false,
           likes: 4654,
-          dislikes: 500
       },
       comments: [
         {
@@ -85,7 +86,6 @@ const postData = [
       reactions: {
           clicked: false,
           likes: 110,
-          dislikes: 3
       },
       comments: [
         {

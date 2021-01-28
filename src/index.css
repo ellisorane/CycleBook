@@ -11,3 +11,45 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.btn {
+  margin: 10px;
+  font-size: 20px;
+  padding: 15px;
+  background-color: rgb(233, 77, 50);
+  border: none;
+  border-radius: 15px;
+  transition: all 0.3s;
+  outline:none;
+}
+
+.btn:hover {
+  background-color: rgb(206, 81, 59);
+  box-shadow: 0 5px 11px 2px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  background-color: tomato;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: red; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
+}

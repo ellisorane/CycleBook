@@ -13,7 +13,7 @@ function Marketplace({marketplacePosts, changeImg, mkFilter, mkCategories, id}) 
                 {
                     mkCategories.map((category, index) => {
                         return (
-                            <button key={index} className={styles.mkBtn} onClick={() => mkFilter(category)}>{category}</button>
+                            <button key={index} className="btn" onClick={() => mkFilter(category)}>{category}</button>
                         )
                     })
                 }
@@ -35,7 +35,7 @@ function Marketplace({marketplacePosts, changeImg, mkFilter, mkCategories, id}) 
                                 <p>{seller}</p>
                                 <img src={userImg} alt={seller} className={styles.userImg} />
                             </div>
-                            <button className={styles.mkBtn}>Contact Seller</button>
+                            <button className="btn">Contact Seller</button>
                         </div>
                     )
                 })

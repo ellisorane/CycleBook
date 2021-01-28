@@ -22,50 +22,62 @@ const App = () => {
   const [posts, setPosts] = useState(postData)
   // console.log(posts)
 
-  //USED IN FEED.JS FOR CONTROLLING HOW MUCH OF A POST'S TEXT IS SHOWN
-  const [readMore, setReadMore] = useState(false)
-
   //USED IN  MARKETPLACE.JS TO RECIEVE MARKETPLACE DATA
   const [marketplacePosts, setMarketplacePosts] = useState(marketplaceData)
 
   //MARKETPLACE FILTER
   const [mkCategories, setMkCategoies] = useState(['All', ...new Set(marketplaceData.map(data => data.brand))])
 
-  //LIKES AND DISLIKES 
-  const handleLikes = (id, type) => {
+  //USED FOR COMMENTS IN FEED.JS
+  let [currentComment, setComment] = useState('')
+
+  //HANDLE COMMENT SUBMISSIONS
+  const handleSubmitComment = (e, id, comment) => {
+    e.preventDefault()
+    //CHECK FOR EMPTY INPUT
+    if (comment !== '') {
+      const newPosts = posts.map(post => {
+        if (post.id === id) {
+          let updatedPost = {
+            ...post,
+            comments: [
+              ...post.comments,
+              {
+                user: 'Anonymous015678',
+                comment: comment
+              }
+            ]
+          }
+          return updatedPost
+        }
+        return post
+      })
+      setPosts(newPosts)
+      setComment('')
+    }
+
+  }
+
+  //LIKES AND DISLIKES IN FEED.JS
+  const handleLikes = (id) => {
     const newPosts = posts.map(post => {
-      console.log(`current id: ${id}, post id: ${post.id}`)
-      if (post.id === id && type === 'like') {
+      if (post.id === id) {
         let updatedPost = {
           ...post,
           reactions: {
             clicked: true,
-            likes: post.reactions.likes + 1,
-            dislikes: post.reactions.dislikes
+            likes: post.reactions.likes + 1
           }
         }
         return updatedPost
       }
-
-      if (post.id === id && type === 'dislike') {
-        let updatedPost = {
-          ...post,
-          reactions: {
-            clicked: true,
-            likes: post.reactions.likes,
-            dislikes: post.reactions.dislikes + 1
-          }
-        }
-        return updatedPost
-      }
-
       return post
     })
 
     setPosts(newPosts)
   }
 
-  //FILTER ITEMS IN MARKETPLACE BY BRAND 
+  //FILTER ITEMS IN MARKETPLACE BY BRAND IN MARKETPLACE.JS
   const mkFilter = (category) => {
     if(category === 'All') {
       setMarketplacePosts(marketplaceData)
@@ -77,7 +89,7 @@ const App = () => {
     return marketplacePosts
   }
 
-  // IMAGE SLIDER FUNCTION 
+  // IMAGE SLIDER FUNCTION IN ALL COMPONENTS WITH MULTIPLE IMAGES
   const changeImg = (postData, dir, id) => {
     //CREATE A NEW SET OF POSTS BY COPYING THE OLD POSTS STATES
     const newPosts = postData.map(post => {
@@ -139,13 +151,14 @@ const App = () => {
   let feed = <Feed
     posts={posts}
     hidePost={hidePost}
-    readMore={readMore}
-    setReadMore={setReadMore}
     changeImg={changeImg}
-    handleLikes={handleLikes} />
+    handleLikes={handleLikes}
+    currentComment={currentComment}
+    setComment={setComment}
+    handleSubmitComment={handleSubmitComment} />
 
   if (posts.length === 0) {
-      feed = <button onClick={refreshFeed} className="refreshFeed">Refresh Feed</button>
+      feed = <button onClick={refreshFeed} className="refreshFeed btn">Refresh Feed</button>
   }
 
   return (
@@ -156,8 +169,6 @@ const App = () => {
           <Route path="/marketplace">
             <Marketplace
               marketplacePosts={marketplacePosts}
-              readMore={readMore}
-              setReadMore={setReadMore}
               changeImg={changeImg}
               mkFilter={mkFilter}
               mkCategories={mkCategories} />

@@ -14,8 +14,9 @@ const PostImage = ({ img, changeImg, id, imgIndex, postData }) => {
             {
             img.length > 1 ? 
             <div className={styles.btnContainer}>
-                <button onClick={() => changeImg(postData, 'prev', id)} className={styles.btn}>◀</button> 
-                <button onClick={() => changeImg(postData, 'next', id)} className={styles.btn}>▶</button>
+                {/* <button onClick={() => changeImg(postData, 'prev', id)} className={styles.btn}>◀</button>  */}
+                <button onClick={() => changeImg(postData, 'prev', id)} className="btn">◀</button> 
+                <button onClick={() => changeImg(postData, 'next', id)} className="btn">▶</button>
             </div> : null
             }
         </div>
