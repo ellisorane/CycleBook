@@ -3,7 +3,9 @@ import {
   BrowserRouter as Router,
   Switch,
   Route
-} from "react-router-dom";
+} from "react-router-dom"
+import { formatDistance, subDays } from 'date-fns'
+import { nanoid } from 'nanoid'
 
 import './App.css'
 
@@ -12,7 +14,6 @@ import marketplaceData from './components/data/marketplaceData'
 import Navbar  from './components/Navabar/Navbar'
 import Feed from './components/Feed/Feed'
 import Marketplace from './components/Marketplace/Marketplace'
-
 
 const App = () => {
   //ACCOUNT DROPDOWN LIST USED IN NAV.JS
@@ -29,7 +30,7 @@ const App = () => {
   const [mkCategories, setMkCategoies] = useState(['All', ...new Set(marketplaceData.map(data => data.brand))])
 
   //USED FOR COMMENTS IN FEED.JS
-  let [currentComment, setComment] = useState('')
+  const [currentComment, setComment] = useState('')
 
   //HANDLE COMMENT SUBMISSIONS
   const handleSubmitComment = (e, id, comment) => {
@@ -41,11 +42,15 @@ const App = () => {
           let updatedPost = {
             ...post,
             comments: [
-              ...post.comments,
               {
+                id: nanoid(),
+                currentUser: true,
                 user: 'Anonymous015678',
-                comment: comment
-              }
+                comment: comment,
+                date: formatDistance(subDays(new Date(), 0), new Date()) + " ago"
+
+              },
+              ...post.comments
             ]
           }
           return updatedPost
@@ -55,7 +60,10 @@ const App = () => {
       setPosts(newPosts)
       setComment('')
     }
+  }
 
+  const deleteComment = (id) => {
+    console.log("Current id: " + id)
   }
 
   //LIKES AND DISLIKES IN FEED.JS
@@ -155,7 +163,8 @@ const App = () => {
     handleLikes={handleLikes}
     currentComment={currentComment}
     setComment={setComment}
-    handleSubmitComment={handleSubmitComment} />
+    handleSubmitComment={handleSubmitComment}
+    deleteComment={deleteComment} />
 
   if (posts.length === 0) {
       feed = <button onClick={refreshFeed} className="refreshFeed btn">Refresh Feed</button>

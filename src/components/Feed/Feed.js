@@ -1,17 +1,18 @@
 import React, {useState} from 'react'
 import ReadMoreAndLess from 'react-read-more-less'
 import { GrLike } from 'react-icons/gr'
+import { MdDelete } from 'react-icons/md'
 
 import PostImg from '../PostImg/PostImg'
 import styles from './Feed.module.css'
 
 
-const Feed = ({ posts, hidePost, changeImg, handleLikes, handleSubmitComment, currentComment, setComment }) => {
+const Feed = ({ posts, hidePost, changeImg, handleLikes, handleSubmitComment, currentComment, setComment, deleteComment }) => {
 
   return (
     <div>
       {posts.map((post) => {
-        const { id, username, userImg, img, imgIndex, title, content, reactions, comments } = post;
+        const { id, username, userImg, img, imgIndex, title, content, reactions, comments, date } = post;
 
         return (
           <div key={id} className={styles.userPost}>
@@ -41,23 +42,30 @@ const Feed = ({ posts, hidePost, changeImg, handleLikes, handleSubmitComment, cu
                 <button className="btn">Submit</button>
               </form>
               {comments.map((comm, index) => {
-                // console.log(comm)
                 return <div key={index} className={styles.comments}>
-                  <strong>{comm.user} :</strong>
-                  <ReadMoreAndLess
-                    className="read-more-content"
-                    charLimit={140}
-                    readMoreText="Read more"
-                    readLessText=" Read less"
-                  >
-                  {comm.comment}
-                  </ReadMoreAndLess>
+                  <div className={styles.leftDiv}>
+                    <strong>{comm.user} :</strong>
+                    <ReadMoreAndLess
+                      className="read-more-content"
+                      charLimit={140}
+                      readMoreText="Read more"
+                      readLessText=" Read less"
+                    >
+                    {comm.comment}
+                    </ReadMoreAndLess>
+                    <p className={styles.commentDate}>{comm.date}</p>
+                  </div>
+                  <div className={styles.rightDiv}>
+                    {/* IF THE USER IS THE CURRENT USER ADD A DELETE BUTTON  */}
+                    {comm.currentUser ? <button onClick={() => deleteComment(comm.id)} className={styles.dltComment}><MdDelete /></button> : null}
+                  </div>
                 </div>
               })}
             </div>
             <div className={styles.userInfo}>
-                <p>{username}</p>
-                <img src={userImg} alt={username} className={styles.userImage} />
+              <p>{username}</p>
+              <img src={userImg} alt={username} className={styles.userImage} />
+              <p>{date}</p>
             </div>
           </div>
         )

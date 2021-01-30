@@ -56,6 +56,20 @@
     border-radius: 5px;
 }
 
+.comments {
+    margin: 10px 5px;
+    border: 1px solid gray;
+    padding: 5px;
+    border-radius: 6px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.leftDiv {
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
 .commentDiv button {
     font-size: 17px;
     padding: 10px;
@@ -71,13 +85,19 @@
     font-size: 16px;
 }
 
-
-
-.comments {
-    margin: 10px 5px;
-    border: 1px solid gray;
+.commentDate {
+    width: max-content;
     padding: 5px;
-    border-radius: 6px;
+    border-radius: 15px;
+    font-size: 12px;
+    background-color: rgb(211, 211, 211);
+}
+
+.dltComment{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    float: right;
 }
 
 @media screen and (min-width: 800px) {

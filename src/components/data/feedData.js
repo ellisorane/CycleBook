@@ -1,4 +1,4 @@
-import { sub } from 'date-fns'
+import { formatDistance, subDays } from 'date-fns'
 import { nanoid } from 'nanoid'
 
 import r6 from './imgs/feed/2020-yamaha-r6.jpg'
@@ -18,19 +18,23 @@ const postData = [
       img: [r6],
       title: 'New R6',
       content: 'Just bought my new 2020 Yamaha R6 so excited to share!😜😜',
-      // date: sub(new Date(), { minutes: 5 }).toISOString(),
+      date: formatDistance(subDays(new Date(), 2), new Date()) + " ago",
       reactions: {
           clicked: false,
           likes: 153,
       },
       comments: [
         {
+          id: nanoid(),
           user: 'WipItPhill',
-          comment: 'Nice'
+          comment: 'Nice',
+          date: formatDistance(subDays(new Date(), 1), new Date()) + " ago"
         },
         {
+          id: nanoid(),
           user: 'Odaley65',
-          comment: 'Where you buy that at? Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+          comment: 'Where you buy that at? Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+          date: formatDistance(subDays(new Date(), 2), new Date()) + " ago"
         }
       ],
         imgIndex: 0,
@@ -42,15 +46,17 @@ const postData = [
       userImg: defaultUser,
       title: 'Motorcycle photographer',
       content: 'Hi guys🙋‍♂️, I\'m a professional motorcycle photographer. Let me know if you want some photos taken. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      // date: sub(new Date(), { minutes: 12 }).toISOString(),
+      date: formatDistance(subDays(new Date(), 5), new Date()) + " ago" ,
       reactions: {
           clicked: false,
           likes: 5648,
       },
       comments: [
         {
+          id: nanoid(),
           user: 'arema Allsers',
-          comment: 'Nice shots! I\'m interested in your services.'
+          comment: 'Nice shots! I\'m interested in your services.',
+          date: formatDistance(subDays(new Date(), 5), new Date()) + " ago"
         }
       ],
         imgIndex: 0,
@@ -62,15 +68,17 @@ const postData = [
       userImg: defaultUser,
       title: 'Took it to the track today',
       content: 'Took my Hyabusa to the track today....almost died lol💀. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-      // date: sub(new Date(), { minutes: 10 }).toISOString(),
+      date: formatDistance(subDays(new Date(), 6), new Date()) + " ago",
       reactions: {
           clicked: false,
           likes: 4654,
       },
       comments: [
         {
+          id: nanoid(),
           user: 'Busabrothe3rd',
-          comment: 'Nice busa bro! We gotta race one of these days.'
+          comment: 'Nice busa bro! We gotta race one of these days.',
+          date: formatDistance(subDays(new Date(), 5), new Date()) + " ago"
         }
       ],
         imgIndex: 0,
@@ -82,15 +90,17 @@ const postData = [
       userImg: defaultUser,
       title: 'Beginner here',
       content: 'Beginner rider here. Hi guys🙋‍♂️',
-      // date: sub(new Date(), { minutes: 15 }).toISOString(),
+      date: formatDistance(subDays(new Date(), 6), new Date()) + " ago",
       reactions: {
           clicked: false,
           likes: 110,
       },
       comments: [
         {
+          id: nanoid(),
           user: 'therider065',
-          comment: 'Hi welcome to the community.'
+          comment: 'Hi welcome to the community.',
+          date: formatDistance(subDays(new Date(), 6), new Date()) + " ago"
         }
       ],
         imgIndex: 0,
