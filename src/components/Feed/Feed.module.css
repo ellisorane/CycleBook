@@ -6,10 +6,9 @@
     background: linear-gradient(45deg,  #f2f6f8 0%,#d8e1e7 37%,#b5c6d0 55%,#e0eff9 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9',GradientType=1 ); */
     box-shadow: 0 5px 11px 2px rgba(0, 0, 0, 0.2);
-    width: 80%;
+    width: 100%;
     margin: 50px auto;
     padding: 20px;
-    border-radius: 15px;
 }
 
 .hideAndLike {
@@ -100,8 +99,17 @@
     float: right;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 767px) {
     .userPost {
-        width: 40%;
+        width: 70%;
+        border-radius: 10px;
+
+    }
+}
+@media screen and (min-width: 1200px) {
+    .userPost {
+        width: 50%;
+        border-radius: 10px;
+
     }
 }
